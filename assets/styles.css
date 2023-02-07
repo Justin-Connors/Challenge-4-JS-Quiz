@@ -1,0 +1,145 @@
+/* Game / Index CSS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #fff;
+    background: rgb(29, 29, 29);
+    font-family: 'Roboto', sans-serif;
+}
+
+.choice-container {
+    display: flex;
+    margin-bottom: 2px;
+    width: 100%;
+    border-radius: 6px;
+    background: gray;
+}
+
+.choice-container:hover {
+    cursor: pointer;
+}
+
+.choice-prefix {
+    padding: 6px 8px;
+    color: white;
+}
+
+.choice-text {
+    padding: 4px;
+    width: 100%;
+}
+
+.correct {
+    background: rgb(4, 119, 4);
+}
+
+.incorrect {
+    background: rgb(153, 7, 7);
+}
+
+.hud-main-text {
+    text-align: center;
+}
+
+.hud-prefix {
+    text-align: center;
+}
+
+#progressText {
+    font-size: 150%;
+    color: white;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.btn {
+    font-size:  150%;
+    padding: 10px 0;
+    width: 480px;
+    text-align: center;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.btn:hover {
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+}
+
+/* End Page Css */
+
+.end-form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 480px;
+}
+
+input {
+    margin-bottom: 10px;
+    width: 240px;
+    padding: 6px;
+    font-size: 150%;
+    border: none;
+}
+
+#username {
+    margin-bottom: 10px;
+    width: 100%;
+    outline: none;
+}
+
+#end-text {
+    font-size: 200%;
+    color: #fff;
+    text-align: center;
+}
+
+#saveScoreBtn {
+    border: none;
+}
+
+.fa-home {
+    margin-left: 8px;
+    font-size: 200%;
+    color: aqua;
+}
