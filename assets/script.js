@@ -2,6 +2,8 @@
 const question = document.querySelector("#question");
 const choices = document.querySelectorAll(".choice-text");
 const scoreText = document.querySelector("#score");
+const timerP = document.querySelector("#timer");
+
 
 //Assigning global variables
 let currentQuestion = {};
@@ -9,6 +11,7 @@ let availableQuestions = [];
 let acceptingAnswers = true;
 let score = 0;
 let questionCounter = 0;
+let timeSecond = 30;
 
 //Questions object array
 var questions = [{
@@ -87,7 +90,9 @@ startGame = () => {
     score = 0;
     availableQuestions = [...questions];
     getNewQuestion();
+    displayCount();
 };
+
 
 getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
@@ -140,6 +145,28 @@ choices.forEach(choice => {
 incrementScore = num => {
     score +=num;
     scoreText.innerText = score;
+}
+
+displayCount(timeSecond);
+
+const countDown = setInterval(() => {
+    timeSecond--;
+    displayCount(timeSecond);
+  if (timeSecond == 0 || timeSecond < 1) {
+    endCount();
+    clearInterval(countDown);
+    window.location.assign('notime.html');
+  }
+}, 1000);
+
+function displayCount(second){
+    const min = Math.floor(second / 60);
+    const sec = Math.floor(second % 60);
+    timerP.innerHTML = `${min < 10 ? "0" : ""}${min}:${sec < 10 ? "0" : ""}${sec}`;
+}
+
+function endCount() {
+    timerP.innerHTML = "Time out";
 }
 
 startGame();
